@@ -11,6 +11,11 @@ export class HomeResolver implements Resolve<any> {
   constructor(private cc: CoinccapService) {}
 
   resolve(): Observable<any> {
-    return this.cc.getAssets({limit: 5});
+    // If we want to limit query size, we can pass in configuration
+    return this.cc.getAssets(
+      {
+        // limit: 100
+      }
+      );
   }
 }

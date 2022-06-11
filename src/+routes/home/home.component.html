@@ -1,5 +1,9 @@
 <h2>Available Assets</h2>
 
-<div *ngFor="let asset of assets">
+<p>Filter</p>
+<input type="text" [ngModel]="queryFilter"  (ngModelChange)="filterResults($event)"/>
+<p>Sort</p>
+
+<div *ngFor="let asset of displayedAssets">
   <app-asset-details [asset]="asset"></app-asset-details>
 </div>

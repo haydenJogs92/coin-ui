@@ -23,6 +23,7 @@ Views
 
 Home - list view of assets
 Asset-Details - expanded view of asset details (charting - what would I use for this?)
+Maybe chart js https://www.chartjs.org/docs/latest/samples/line/line.html
 Wallet View - view contents of wallet with 
 
 Footer - always there

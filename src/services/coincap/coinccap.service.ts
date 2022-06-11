@@ -7,7 +7,7 @@ import { map } from 'rxjs';
 const API_BASE_URL = 'https://api.coincap.io/v2';
 
 export interface IAssetConfig {
-  limit: number;
+  limit?: number;
 }
 
 @Injectable({
@@ -19,6 +19,12 @@ export class CoinccapService {
 
   getAssets(config: IAssetConfig) {
     return this.http.get(API_BASE_URL + '/assets' + convertToQueryString(config)).pipe(
+      map((data: any) => data.data)
+    );
+  }
+
+  getAsset(assetId: string) {
+    return this.http.get(API_BASE_URL + `/assets/${assetId}`).pipe(
       map((data: any) => data.data)
     );
   }

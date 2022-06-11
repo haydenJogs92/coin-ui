@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { debounceTime, Subject } from 'rxjs';
 import { CoinccapService } from '../../services/coincap/coinccap.service';
 
 @Component({
@@ -9,13 +10,32 @@ import { CoinccapService } from '../../services/coincap/coinccap.service';
 })
 export class HomeComponent implements OnInit {
 
-  assets: any;
-
+  allAssets: any[];
+  displayedAssets: any[];
+  queryFilter: any;
+  
   constructor(private cc: CoinccapService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.assets = this.route.snapshot.data['assets'];
-    console.log('Assets', this.assets);
+    this.displayedAssets = this.allAssets = this.route.snapshot.data['assets'];  
+    console.log('Assets', this.allAssets);
+  }
+
+  
+  /*
+    Filter Results By Name and Symbol
+  */
+    filterResults(queryFilter: string) {
+    const formattedQuery = queryFilter.toLowerCase();
+    this.displayedAssets = this.allAssets.filter((asset) => {
+      return (
+        asset.name.toLowerCase().includes(formattedQuery) ||
+        asset.symbol.toLowerCase().includes(formattedQuery)
+      )
+    })
+    if (queryFilter == '') {
+      this.displayedAssets = this.allAssets;
+    }
   }
 
 }
