@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoinccapService } from '../services/coincap/coinccap.service';
+import { SharedModule } from '../lib/shared/shared.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CoinccapService } from '../services/coincap/coinccap.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [
     CoinccapService

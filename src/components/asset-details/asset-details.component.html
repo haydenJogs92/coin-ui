@@ -1,0 +1,9 @@
+{{asset.name}} ({{asset.symbol}}) {{asset.priceUsd | currency}}
+<ng-container *ngIf="positiveChange; else negative">
+  Positive
+</ng-container>
+<ng-template #negative>
+  Negative
+</ng-template>
+<br>
+<a [routerLink]="['asset', asset.id]">View Details</a>

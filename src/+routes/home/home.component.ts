@@ -14,11 +14,8 @@ export class HomeComponent implements OnInit {
   constructor(private cc: CoinccapService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.cc.getAssets({
-    //   limit: 5
-    // }).subscribe(() => {})
     this.assets = this.route.snapshot.data['assets'];
-    console.log(this.assets);
+    console.log('Assets', this.assets);
   }
 
 }
