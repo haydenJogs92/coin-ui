@@ -1,4 +1,8 @@
-{{asset.name}} ({{asset.symbol}}) {{asset.priceUsd | currency}}
+<h4>{{asset.name}} ({{asset.symbol}}) {{asset.priceUsd | currency}}</h4>
+<br>
+<p>Volume: {{asset.volumeUsd24Hr | number:'1.0-0'}}</p>
+<p>Percent Change: {{asset.changePercent24Hr | slice:0:5}}%</p>
+<p>Market Cap: {{asset.marketCapUsd | currency}}</p>
 <ng-container *ngIf="positiveChange; else negative">
   Positive
 </ng-container>
@@ -6,4 +10,5 @@
   Negative
 </ng-template>
 <br>
+
 <a [routerLink]="['asset', asset.id]">View Details</a>

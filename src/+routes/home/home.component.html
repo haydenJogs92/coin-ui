@@ -5,30 +5,30 @@
 <input type="text" [ngModel]="queryFilter"  (ngModelChange)="filterResults($event)"/>
 
 <!-- Sort Results -->
-
-<!-- First Select Sort By Option -->
-<form [formGroup]="sortByForm">
-  <p>Sort By:
-    <label><input type="radio" value="priceUsd" formControlName="selectedSortProperty"> Price (USD)</label>
-    <label><input type="radio" value="changePercent24Hr" formControlName="selectedSortProperty"> 24Hr Percent Change</label>
-    <label><input type="radio" value="volumeUsd24Hr" formControlName="selectedSortProperty"> 24Hr Volume</label>
-    <label><input type="radio" value="marketCapUsd" formControlName="selectedSortProperty"> Market Cap</label>
-  </p>
-</form>
-
-<!-- Next Sort By Highest or Lowest -->
-<ng-container *ngIf="selectedSortByPropertyValue != ''">
-  <button (click)="sortByProperty(selectedSortByPropertyValue)">
-    <ng-container *ngIf="sortProperies[selectedSortByPropertyValue]">Highest To Lowest</ng-container>
-    <ng-container *ngIf="!sortProperies[selectedSortByPropertyValue]">Lowest To Highest</ng-container>
-    <ng-container [ngSwitch]="selectedSortByPropertyValue">
-      <ng-container *ngSwitchCase="'priceUsd'"> Price</ng-container>
-      <ng-container *ngSwitchCase="'changePercent24Hr'"> 24Hr Percent Change</ng-container>
-      <ng-container *ngSwitchCase="'volumeUsd24Hr'"> 24Hr Volume</ng-container>
-      <ng-container *ngSwitchCase="'marketCapUsd'"> Market Cap</ng-container>
-    </ng-container>
-  </button>
-</ng-container>
+<div>
+  <!-- First Select Sort By Option -->
+  <form [formGroup]="sortByForm">
+    <p>Sort By:
+      <label><input type="radio" value="priceUsd" formControlName="selectedSortProperty"> Price (USD)</label>
+      <label><input type="radio" value="changePercent24Hr" formControlName="selectedSortProperty"> 24Hr Percent Change</label>
+      <label><input type="radio" value="volumeUsd24Hr" formControlName="selectedSortProperty"> 24Hr Volume</label>
+      <label><input type="radio" value="marketCapUsd" formControlName="selectedSortProperty"> Market Cap</label>
+    </p>
+  </form>
+  <!-- Next Sort By Highest or Lowest -->
+  <ng-container *ngIf="selectedSortByPropertyValue != ''">
+    <button (click)="sortByProperty(selectedSortByPropertyValue)">
+      <ng-container *ngIf="sortProperies[selectedSortByPropertyValue]">Highest To Lowest</ng-container>
+      <ng-container *ngIf="!sortProperies[selectedSortByPropertyValue]">Lowest To Highest</ng-container>
+      <ng-container [ngSwitch]="selectedSortByPropertyValue">
+        <ng-container *ngSwitchCase="'priceUsd'"> Price</ng-container>
+        <ng-container *ngSwitchCase="'changePercent24Hr'"> 24Hr Percent Change</ng-container>
+        <ng-container *ngSwitchCase="'volumeUsd24Hr'"> 24Hr Volume</ng-container>
+        <ng-container *ngSwitchCase="'marketCapUsd'"> Market Cap</ng-container>
+      </ng-container>
+    </button>
+  </ng-container>
+</div>
 
 <!-- Display List of Assets -->
 <div *ngFor="let asset of displayedAssets">

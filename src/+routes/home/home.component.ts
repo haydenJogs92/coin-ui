@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
     'marketCapUsd': false // Sort By Market Cap
   };
 
+  // form getters
   get selectedSortByPropertyValue() {return this.sortByForm.get('selectedSortProperty')?.value }
   get selectedSortByPropertyControl() {return this.sortByForm.get('selectedSortProperty') }
   
