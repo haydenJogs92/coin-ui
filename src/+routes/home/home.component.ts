@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { debounceTime, Subject } from 'rxjs';
-import { CoinccapService } from '../../services/coincap/coinccap.service';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +11,36 @@ export class HomeComponent implements OnInit {
 
   allAssets: any[];
   displayedAssets: any[];
-  queryFilter: any;
+  queryFilter: string;
+  selectedSortProperty: string;
+  sortByForm: FormGroup;
+  sortProperies: {[key: string]: boolean} = {
+    'priceUsd': false, // Sort By Price
+    'changePercent24Hr': false, // Sort By Percent Change
+    'volumeUsd24Hr': false, // Sort By Volume
+    'marketCapUsd': false // Sort By Market Cap
+  };
+
+  get selectedSortByPropertyValue() {return this.sortByForm.get('selectedSortProperty')?.value }
+  get selectedSortByPropertyControl() {return this.sortByForm.get('selectedSortProperty') }
   
-  constructor(private cc: CoinccapService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    // Get Assets from resolver
     this.displayedAssets = this.allAssets = this.route.snapshot.data['assets'];  
     console.log('Assets', this.allAssets);
+
+    this.sortByForm = this.fb.group({
+      selectedSortProperty: this.fb.control('')
+    });
+
+    // Sort By Property Automatically When Sort By Radio is Selected
+    this.selectedSortByPropertyControl?.valueChanges.subscribe((property) => {
+      this.sortByProperty(property)
+    })
   }
 
-  
   /*
     Filter Results By Name and Symbol
   */
@@ -35,6 +54,24 @@ export class HomeComponent implements OnInit {
     })
     if (queryFilter == '') {
       this.displayedAssets = this.allAssets;
+    }
+  }
+
+  /*
+    Sort By Property
+  */
+  sortByProperty(property: string) {
+    this.sortProperies[property] = !this.sortProperies[property];
+    if (this.sortProperies[property]) {
+      // sort property ascending
+      this.displayedAssets.sort((assetA, assetB) => {
+        return parseInt(assetA[property]) - parseInt(assetB[property])
+      });
+    } else {
+      // sort property descending
+      this.displayedAssets.sort((assetA, assetB) => {
+        return parseInt(assetB[property]) - parseInt(assetA[property])
+      });
     }
   }
 
