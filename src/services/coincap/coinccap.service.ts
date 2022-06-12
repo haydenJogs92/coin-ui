@@ -28,4 +28,10 @@ export class CoinccapService {
       map((data: any) => data.data)
     );
   }
+
+  getAssetHistory(assetId: string, interval: string) {
+    return this.http.get(API_BASE_URL + `/assets/${assetId}/history?interval=${interval}`).pipe(
+      map((data: any) => data.data)
+    );
+  }
 }

@@ -2,34 +2,32 @@ TODO
 
 Set up connection to API - no api required, but limited to 200 requests a minute, so it would probably be good to request an API key to use (though, I don't really want to put this on GitHub in case my key gets abused and it is linked to my name, so I'll probably go without it if I can)
 
-
-Figure out state management - can I use ngrx state management to preserve state
-
 functionality - view different assets and their prices 
-- list view with summary detail of each
-- assets much be filterable or searchable (why not both?)
+- list view with summary detail of each - done (needs formatting)
+- assets much be filterable or searchable (why not both?) - done
 
-detail view of each asset
+detail view of each asset - TODO
 
-ability to maintain a wallet
+ability to maintain a wallet - TODO
 - add, remove asset amount
 - remove fractional or whole amounts
 - see value equated in USD as value changes over time
 - persist data between sessions (possible ngrx implementation, however, this might get complex to implement. Might be better to just try setting stuff in session storage for starts https://blog.briebug.com/blog/how-to-add-ngrx-store-slices-into-localstorage)
 
-
-
 Views
 
-Home - list view of assets
-Asset-Details - expanded view of asset details (charting - what would I use for this?)
+Home - list view of assets - done needs formatting
+Asset-Details - expanded view of asset details (charting - what would I use for this?) - TODO
 Maybe chart js https://www.chartjs.org/docs/latest/samples/line/line.html
-Wallet View - view contents of wallet with 
+Wallet View - view contents of wallet with - TODO
 
 Footer - always there
 Menu Bar - always there (Links {Home, Wallet})
 
 Add not found page (and other global handling for error pages)
+
+TODO 
+add tests
 
 
 TODO - not implemented

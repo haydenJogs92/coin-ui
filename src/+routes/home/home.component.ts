@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // Get Assets from resolver
-    this.displayedAssets = this.allAssets = this.route.snapshot.data['assets'];  
+    this.displayedAssets = this.allAssets = this.route.snapshot.data['assets'];
     console.log('Assets', this.allAssets);
 
     this.sortByForm = this.fb.group({
@@ -66,12 +66,12 @@ export class HomeComponent implements OnInit {
     if (this.sortProperies[property]) {
       // sort property ascending
       this.displayedAssets.sort((assetA, assetB) => {
-        return parseInt(assetA[property]) - parseInt(assetB[property])
+        return parseFloat(assetA[property]) - parseFloat(assetB[property])
       });
     } else {
       // sort property descending
       this.displayedAssets.sort((assetA, assetB) => {
-        return parseInt(assetB[property]) - parseInt(assetA[property])
+        return parseFloat(assetB[property]) - parseFloat(assetA[property])
       });
     }
   }

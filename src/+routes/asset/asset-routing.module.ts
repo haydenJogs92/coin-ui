@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AssetHistoryResolver } from './asset-history-resolver';
 import { AssetResolver } from './asset-resolver';
 import { AssetComponent } from './asset.component';
 
@@ -10,7 +11,8 @@ const routes: Routes = [
   {
     path: ':assetID',
     resolve: {
-      assets: AssetResolver
+      asset: AssetResolver,
+      assetHistory: AssetHistoryResolver
     },
     component: AssetComponent
   }       
