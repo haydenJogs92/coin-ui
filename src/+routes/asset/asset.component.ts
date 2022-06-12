@@ -1,8 +1,10 @@
-import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ChartConfiguration, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { MyWalletService } from 'src/services/my-wallet/my-wallet.service';
+import { UserService } from 'src/services/user/user.service';
 import { ComponentState } from '../../components/asset-details/asset-details.component';
 
 @Component({
@@ -13,6 +15,7 @@ import { ComponentState } from '../../components/asset-details/asset-details.com
 export class AssetComponent implements OnInit {
 
   asset: any;
+  assetPricePerUnit: number;
   assetHistory: any[];
   lineChartData: ChartConfiguration['data'];
   lineChartPriceData: any[] = [];
@@ -24,10 +27,19 @@ export class AssetComponent implements OnInit {
 
   readonly ComponentState: typeof ComponentState = ComponentState;
 
-  constructor(private route: ActivatedRoute, private currencyPipe: CurrencyPipe) { }
+  form: FormGroup;
+  get formQuantity() { return this.form.get('quantity'); }
+  get formPrice() { return isNaN(parseFloat(this.formQuantity?.value)) ? 0 : parseFloat(this.formQuantity?.value) * this.assetPricePerUnit }
+
+  constructor(
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private mw: MyWalletService,
+    private us: UserService) { }
 
   ngOnInit(): void {
     this.asset = this.route.snapshot.data['asset'];
+    this.assetPricePerUnit = parseFloat(this.asset.priceUsd);
     this.assetHistory = this.route.snapshot.data['assetHistory'];
     console.log('assetHistory', this.assetHistory)
 
@@ -56,6 +68,19 @@ export class AssetComponent implements OnInit {
       ],
       labels: this.lineChartDateData
     };
+
+    // Purchase Asset Form
+    this.form = this.fb.group({
+      quantity: this.fb.control('', Validators.required),
+      assetId: this.fb.control(this.asset.id),
+      pricePerUnit: this.fb.control(this.assetPricePerUnit),
+    })
   }
 
+  submitForm() {
+    console.log('submit form')
+    console.log(this.form.value);
+    this.mw.addToWallet(this.us.getUserId(), this.form.value)
+    
+  }
 }

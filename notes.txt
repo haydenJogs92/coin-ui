@@ -11,14 +11,19 @@ detail view of each asset - done needs formatting
 ability to maintain a wallet - TODO
 - add, remove asset amount
 - remove fractional or whole amounts
-- see value equated in USD as value changes over time
+- see value equated in USD as value changes over time (meaning, if I purchase bitcoin, then the price changes, I see the current quantity in USD)
 - persist data between sessions (possible ngrx implementation, however, this might get complex to implement. Might be better to just try setting stuff in session storage for starts https://blog.briebug.com/blog/how-to-add-ngrx-store-slices-into-localstorage)
 
 Views
 
 Home - list view of assets - done needs formatting
 Asset-Details - expanded view of asset details - done for now - needs formatting
-Wallet View - view contents of wallet with - TODO
+Wallet View - view contents of wallet with 
+- asset type
+- asset quantity
+- asset avg purchase price? (maybe not strictly required)
+- asset current value (just need asset current price * quantity)
+- TODO
 
 Footer - always there
 Menu Bar - always there (Links {Home, Wallet})

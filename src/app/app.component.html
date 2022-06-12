@@ -1,11 +1,16 @@
 <header>
-  <nav>
-    <a routerLink="">Home</a>
-    <a routerLink="">My Wallet</a>
+  <nav style="text-align: center">
+    My Coin Wallet
+    <div>
+      <a routerLink="">Home</a>
+      &nbsp;|&nbsp;
+      <!-- For now, just tracking data for one user with user id: 1 -->
+      <a routerLink="my-wallet/1">My Wallet</a>
+    </div>
   </nav>
 </header>
 <router-outlet></router-outlet>
 <!-- Footer -->
 <footer style="text-align: center">
-  My Coin Wallet  
+  My Coin Wallet | {{year}}
 </footer>

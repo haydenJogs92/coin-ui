@@ -12,6 +12,10 @@ const routes: Routes = [
       {
         path: 'asset',
         loadChildren: () => import('../+routes/asset/asset.module').then(m => m.AssetModule)
+      },
+      {
+        path: 'my-wallet',
+        loadChildren: () => import('../+routes/my-wallet/my-wallet.module').then(m => m.MyWalletModule)
       }
     ]
   }       
