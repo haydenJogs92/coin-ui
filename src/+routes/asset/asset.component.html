@@ -2,17 +2,8 @@
 
 <app-asset-details [asset]="asset" [componentState]="ComponentState.AssetDetailsView"></app-asset-details>
 
-<h2>Purchase {{asset.name}} ({{asset.symbol}})</h2>
-
-<!-- TODO might abstract this out into an asset purchase/sell component -->
-<form [formGroup]="form">
-  <!-- TODO would be nice to have purchase in USD or in Quantity -->
-  Quantity: <input type="text" formControlName="quantity">
-  <br>
-  Total Price: {{formPrice | currency}}
-  <br>
-  <button *ngIf="form.valid" type="button" (click)="submitForm()">Submit</button>
-</form>
+<!-- Buy/Sell Asset -->
+<app-update-wallet-form [asset]="asset"></app-update-wallet-form>
 
 <h2>Performance</h2>
 

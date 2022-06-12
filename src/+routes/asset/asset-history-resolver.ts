@@ -11,7 +11,6 @@ export class AssetHistoryResolver implements Resolve<any> {
   constructor(private cc: CoinccapService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    // TODO (possibly get asset history instead)
     const assetID = route.params['assetID'];
     return this.cc.getAssetHistory(assetID, 'd1');
   }

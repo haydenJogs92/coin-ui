@@ -4,8 +4,7 @@
     <div>
       <a routerLink="">Home</a>
       &nbsp;|&nbsp;
-      <!-- For now, just tracking data for one user with user id: 1 -->
-      <a routerLink="my-wallet/1">My Wallet</a>
+      <a [routerLink]="['my-wallet/', userId]">My Wallet</a>
     </div>
   </nav>
 </header>

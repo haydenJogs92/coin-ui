@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'coin-ui';
   year = new Date().getFullYear();
+  userId: number;
+  
+  constructor(private us: UserService) {
+    this.userId = this.us.getUserId()
+    console.log('user id', this.userId);
+  }
+
 }

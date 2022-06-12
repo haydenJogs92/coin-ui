@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export enum ComponentState {
   ListView,
-  AssetDetailsView
+  AssetDetailsView,
+  WalletView
 }
 
 @Component({
@@ -14,7 +15,8 @@ export class AssetDetailsComponent implements OnInit {
 
   @Input() asset: any;
   @Input() componentState = ComponentState.ListView;
-  positiveChange: boolean = false;
+  dailyPositiveChange: boolean = false;
+  totalReturnChange: boolean = false;
   readonly ComponentState: typeof ComponentState = ComponentState;
   
   
@@ -22,7 +24,10 @@ export class AssetDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.asset) {
-      this.positiveChange = !this.asset.changePercent24Hr.includes('-');
+      this.dailyPositiveChange = !this.asset.changePercent24Hr.includes('-');
+      if (this.componentState == ComponentState.WalletView) {
+        this.totalReturnChange = this.asset.totalReturn > 0;
+      }
     }
   }
 

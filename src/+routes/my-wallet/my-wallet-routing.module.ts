@@ -8,10 +8,6 @@ const routes: Routes = [
   },
   {
     path: ':userId',
-    resolve: {
-      // fetch my wallet details
-      // asset: AssetResolver
-    },
     component: MyWalletComponent
   }       
 ];

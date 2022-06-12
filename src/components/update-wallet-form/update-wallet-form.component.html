@@ -1,0 +1,19 @@
+<p>update-wallet-form works!</p>
+
+<h2>
+  <ng-container *ngIf="componentState === ComponentState.Buy">Buy </ng-container>
+  <ng-container *ngIf="componentState === ComponentState.Sell">Sell </ng-container>
+  {{asset.name}} ({{asset.symbol}})
+</h2>
+
+<form [formGroup]="form">
+  <label><input type="radio" [value]="ComponentState.Buy" formControlName="buyOrSell"> Buy</label>
+  <label><input type="radio" [value]="ComponentState.Sell" formControlName="buyOrSell"> Sell</label>
+  <br>
+  <!-- TODO would be nice to have purchase in USD or in Quantity -->
+  Quantity: <input type="text" formControlName="quantity">
+  <br>
+  Total Price: {{formPrice | currency}}
+  <br>
+  <button *ngIf="form.valid" type="button" (click)="submitForm()">Submit</button>
+</form>

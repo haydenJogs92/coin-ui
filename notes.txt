@@ -25,8 +25,16 @@ Wallet View - view contents of wallet with
 - asset current value (just need asset current price * quantity)
 - TODO
 
-Footer - always there
-Menu Bar - always there (Links {Home, Wallet})
+Footer - always there - done
+Menu Bar - always there (Links {Home, Wallet}) - done
+
+Wallet View - done
+Persistent Wallet localstorage - done
+
+Must TODO
+Link to Repo on GitHub
+Deploy App
+Add Some Unit tests
 
 TODO 
 add tests

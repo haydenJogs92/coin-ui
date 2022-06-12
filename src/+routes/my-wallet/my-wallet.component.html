@@ -1,3 +1,6 @@
 <h2>My Assets</h2>
 
-List of assets - option to sell quantity?
+<!-- Display List of Assets with Wallet Details -->
+<div *ngFor="let asset of displayedAssets">
+  <app-asset-details [asset]="asset" [componentState]="ComponentState.WalletView"></app-asset-details>
+</div>

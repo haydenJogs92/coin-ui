@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms'
 import {ReactiveFormsModule} from '@angular/forms'
 import { AssetDetailsComponent } from '../../components/asset-details/asset-details.component';
 import { RouterModule } from '@angular/router';
+import { UpdateWalletFormComponent } from 'src/components/update-wallet-form/update-wallet-form.component';
 
 @NgModule({
   declarations: [
-    AssetDetailsComponent
+    AssetDetailsComponent,
+    UpdateWalletFormComponent
   ],
   imports: [
     CommonModule,
@@ -15,12 +17,12 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     RouterModule
   ],
-  providers: [CurrencyPipe],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AssetDetailsComponent
+    AssetDetailsComponent,
+    UpdateWalletFormComponent
   ]
 })
 export class SharedModule { }

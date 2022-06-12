@@ -1,13 +1,34 @@
-<h4>{{asset.name}} ({{asset.symbol}}) {{asset.priceUsd | currency}}</h4>
-<p>Volume: {{asset.volumeUsd24Hr | number:'1.0-0'}}</p>
-<p>Percent Change: {{asset.changePercent24Hr | slice:0:5}}%</p>
-<p>Market Cap: {{asset.marketCapUsd | currency}}</p>
-<ng-container *ngIf="positiveChange; else negative">
-  Positive
-</ng-container>
-<ng-template #negative>
-  Negative
-</ng-template>
-<br>
+<div class="asset-details">
+  <h4>{{asset.name}} ({{asset.symbol}})</h4>
+  <p>Current Price: {{asset.priceUsd | currency}}</p>
+  <ng-container *ngIf="componentState == ComponentState.ListView  || componentState == ComponentState.AssetDetailsView">
+    <p>Volume: {{asset.volumeUsd24Hr | number:'1.0-0'}}</p>
+    <p>Market Cap: {{asset.marketCapUsd | currency}}</p>
+  </ng-container>
+  <p>Daily Percent Change: 
+    <span [ngClass]="{'asset-details-up': dailyPositiveChange,'asset-details-down': !dailyPositiveChange}">
+      {{asset.changePercent24Hr | slice:0:5}}%
+    </span>
+  </p>
+  <ng-container *ngIf="componentState == ComponentState.WalletView">
+    <b>Portfolio Performance</b>
+    <p>Price Average: 
+      <span>
+        {{asset.priceAverage | currency}}
+      </span>
+    </p>
+    <p>Total Return: 
+      <span [ngClass]="{'asset-details-up': totalReturnChange,'asset-details-down': !totalReturnChange}">
+        {{asset.totalReturn | currency}}
+      </span>
+    </p>
+    <p>Quantity: {{asset.quantity}}</p>
+    <p>Total Value: {{asset.totalValue | currency}}</p>
+    </ng-container>
 
-<a *ngIf="componentState == ComponentState.ListView" [routerLink]="['asset', asset.id]">View Details</a>
+  <a *ngIf="componentState == ComponentState.ListView || componentState == ComponentState.WalletView" 
+      [routerLink]="['/asset', asset.id]">
+    View Details
+  </a>
+  <div class="divider"></div>
+</div>
