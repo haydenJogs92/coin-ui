@@ -1,5 +1,6 @@
 <h2>My Assets</h2>
-
+<p>Total Balance {{myWallet.balance | currency}}</p>
+<div class="divider"></div>
 <!-- Display List of Assets with Wallet Details -->
 <div *ngFor="let asset of displayedAssets">
   <app-asset-details [asset]="asset" [componentState]="ComponentState.WalletView"></app-asset-details>

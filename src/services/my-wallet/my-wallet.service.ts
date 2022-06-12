@@ -47,9 +47,9 @@ export class MyWalletService {
   }
 
   /* Add To Wallet */
-  addToWallet(userId: number, transaction: IAssetTransaction): void {
+  addToWallet(userId: number, transaction: IAssetTransaction): boolean {
     // Get current wallet asset
-    const walletAsset: IWalletAsset = this.getWalletAsset(userId, transaction.assetId);
+    const walletAsset: IWalletAsset = this.getOrCreateWalletAsset(userId, transaction.assetId);
     const todayTotalPrice: number = parseFloat((parseFloat(transaction.pricePerUnit) * parseFloat(transaction.quantity)).toFixed(2));
     const transactionQuantity: number = parseFloat(transaction.quantity);
     // current quantity
@@ -64,15 +64,16 @@ export class MyWalletService {
     this.setWalletAssetInWallet(userId, transaction.assetId, walletAsset);
     console.log('updated wallet', this.wallet);
     this.setWalletInLocalStorage(userId)
+    return true;
   }
 
   /* Remove From Wallet */
-  removeFromWallet(userId: number, transaction: IAssetTransaction): void {
-    const walletAsset: IWalletAsset = this.getWalletAsset(userId, transaction.assetId);
+  removeFromWallet(userId: number, transaction: IAssetTransaction): boolean {
+    const walletAsset: IWalletAsset = this.getWalletAsset(userId, transaction.assetId) as IWalletAsset;
     const transactionQuantity: number = parseFloat(transaction.quantity);
     // only if wallet is not empty and requested change is not greater than the current quantity
-    if (walletAsset.quantity > 0 && transactionQuantity <= walletAsset.quantity) {
-      const walletAsset: IWalletAsset = this.getWalletAsset(userId, transaction.assetId);
+    if (walletAsset != null && transactionQuantity <= walletAsset.quantity) {
+      const walletAsset: IWalletAsset = this.getWalletAsset(userId, transaction.assetId) as IWalletAsset;
       const todayTotalPrice: number = parseFloat((parseFloat(transaction.pricePerUnit) * parseFloat(transaction.quantity)).toFixed(2));
       
       // update quantity
@@ -89,13 +90,15 @@ export class MyWalletService {
       }
       console.log('updated wallet', this.wallet);
       this.setWalletInLocalStorage(userId)
+      return true;
     } else {
       console.log('unable to perform transaction');
+      return false;
     }
   }
 
-  /* Get Asset from wallet */
-  getWalletAsset(userId: number, assetId: string): IWalletAsset {
+  /* Get Or Create Asset from wallet */
+  getOrCreateWalletAsset(userId: number, assetId: string): IWalletAsset {
     const wallet = this.getWallet(userId);
     let walletAsset = {} as IWalletAsset;
     
@@ -109,6 +112,16 @@ export class MyWalletService {
       walletAsset = wallet.assets[assetId];
     }
     return walletAsset;
+  }
+
+  /* Get Asset from wallet */
+  getWalletAsset(userId: number, assetId: string): IWalletAsset|null {
+    const wallet = this.getWallet(userId);
+    if (Object.keys(wallet.assets).includes(assetId)) {
+      return wallet.assets[assetId]
+    } else {
+      return null
+    }
   }
 
   /* Set Asset In wallet */
