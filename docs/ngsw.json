@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1655071768346,
-  "index": "/index.html",
+  "timestamp": 1655072235357,
+  "index": "https://github.com/haydenJogs92/coin-ui/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,17 +11,17 @@
         "ignoreVary": true
       },
       "urls": [
-        "/460.bb7322431763fc78.js",
-        "/614.debfd1a42b5f954f.js",
-        "/827.4b6bf689cdc06784.js",
-        "/common.3764391717f5ebf7.js",
-        "/favicon.ico",
-        "/index.html",
-        "/main.b8051df3e1aaa30e.js",
-        "/manifest.webmanifest",
-        "/polyfills.0488c1a415051e80.js",
-        "/runtime.fa8cd060a80eb529.js",
-        "/styles.ef46db3751d8e999.css"
+        "https://github.com/haydenJogs92/coin-ui/460.bb7322431763fc78.js",
+        "https://github.com/haydenJogs92/coin-ui/614.debfd1a42b5f954f.js",
+        "https://github.com/haydenJogs92/coin-ui/827.4b6bf689cdc06784.js",
+        "https://github.com/haydenJogs92/coin-ui/common.3764391717f5ebf7.js",
+        "https://github.com/haydenJogs92/coin-ui/favicon.ico",
+        "https://github.com/haydenJogs92/coin-ui/index.html",
+        "https://github.com/haydenJogs92/coin-ui/main.b8051df3e1aaa30e.js",
+        "https://github.com/haydenJogs92/coin-ui/manifest.webmanifest",
+        "https://github.com/haydenJogs92/coin-ui/polyfills.0488c1a415051e80.js",
+        "https://github.com/haydenJogs92/coin-ui/runtime.fa8cd060a80eb529.js",
+        "https://github.com/haydenJogs92/coin-ui/styles.ef46db3751d8e999.css"
       ],
       "patterns": []
     },
@@ -33,39 +33,39 @@
         "ignoreVary": true
       },
       "urls": [
-        "/assets/icons/icon-128x128.png",
-        "/assets/icons/icon-144x144.png",
-        "/assets/icons/icon-152x152.png",
-        "/assets/icons/icon-192x192.png",
-        "/assets/icons/icon-384x384.png",
-        "/assets/icons/icon-512x512.png",
-        "/assets/icons/icon-72x72.png",
-        "/assets/icons/icon-96x96.png"
+        "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-128x128.png",
+        "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-144x144.png",
+        "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-152x152.png",
+        "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-192x192.png",
+        "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-384x384.png",
+        "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-512x512.png",
+        "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-72x72.png",
+        "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/460.bb7322431763fc78.js": "26d980cf255ab6b8284dfb0d7a0a8b2cec3470f7",
-    "/614.debfd1a42b5f954f.js": "d6f2a785d9c921206f7ab876be523c54b46950f9",
-    "/827.4b6bf689cdc06784.js": "4bff6e25f86bacce3876c59e73938641d4dfc312",
-    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/common.3764391717f5ebf7.js": "23ba50642a0ea4e25df0e591d377c25b72b57eb1",
-    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "262593abed0a9b1bf3eac51d841ce748c35ca2f2",
-    "/main.b8051df3e1aaa30e.js": "69bf31e5ebf880f80488397efb15e021053e64f8",
-    "/manifest.webmanifest": "49f58f8d1a44fc95cd0de5f70fd072b34713dfa4",
-    "/polyfills.0488c1a415051e80.js": "6e59829f2418d1536955a3c13789e52e5f3c2629",
-    "/runtime.fa8cd060a80eb529.js": "631c2a7d759676e42a9ae99dd472892c7a30056c",
-    "/styles.ef46db3751d8e999.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "https://github.com/haydenJogs92/coin-ui/460.bb7322431763fc78.js": "26d980cf255ab6b8284dfb0d7a0a8b2cec3470f7",
+    "https://github.com/haydenJogs92/coin-ui/614.debfd1a42b5f954f.js": "d6f2a785d9c921206f7ab876be523c54b46950f9",
+    "https://github.com/haydenJogs92/coin-ui/827.4b6bf689cdc06784.js": "4bff6e25f86bacce3876c59e73938641d4dfc312",
+    "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://github.com/haydenJogs92/coin-ui/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://github.com/haydenJogs92/coin-ui/common.3764391717f5ebf7.js": "23ba50642a0ea4e25df0e591d377c25b72b57eb1",
+    "https://github.com/haydenJogs92/coin-ui/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://github.com/haydenJogs92/coin-ui/index.html": "88b8bcb286226e88cd03b3b4ea2977bf4aa6d091",
+    "https://github.com/haydenJogs92/coin-ui/main.b8051df3e1aaa30e.js": "69bf31e5ebf880f80488397efb15e021053e64f8",
+    "https://github.com/haydenJogs92/coin-ui/manifest.webmanifest": "49f58f8d1a44fc95cd0de5f70fd072b34713dfa4",
+    "https://github.com/haydenJogs92/coin-ui/polyfills.0488c1a415051e80.js": "6e59829f2418d1536955a3c13789e52e5f3c2629",
+    "https://github.com/haydenJogs92/coin-ui/runtime.fa8cd060a80eb529.js": "631c2a7d759676e42a9ae99dd472892c7a30056c",
+    "https://github.com/haydenJogs92/coin-ui/styles.ef46db3751d8e999.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
   },
   "navigationUrls": [
     {
