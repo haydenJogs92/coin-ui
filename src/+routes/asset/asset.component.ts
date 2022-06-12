@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChartConfiguration, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { ComponentState } from '../../components/asset-details/asset-details.component';
 
 @Component({
   selector: 'app-asset',
@@ -20,6 +21,8 @@ export class AssetComponent implements OnInit {
   public lineChartType: ChartType = 'line';
 
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
+  readonly ComponentState: typeof ComponentState = ComponentState;
 
   constructor(private route: ActivatedRoute, private currencyPipe: CurrencyPipe) { }
 
@@ -40,7 +43,7 @@ export class AssetComponent implements OnInit {
     this.lineChartData = {
       datasets: [
         {
-          label: this.asset.symbol,
+          label: this.asset.name + " (" + this.asset.symbol + ")",
           data: this.lineChartPriceData,
           backgroundColor: 'rgba(148,159,177,0.2)',
           borderColor: 'rgba(148,159,177,1)',

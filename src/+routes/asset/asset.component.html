@@ -1,16 +1,14 @@
 <h2>Details</h2>
 
-<app-asset-details [asset]="asset"></app-asset-details>
+<app-asset-details [asset]="asset" [componentState]="ComponentState.AssetDetailsView"></app-asset-details>
 
 <h2>Performance</h2>
 
 <div style="display: block;">
-  <!-- [options]="lineChartOptions" -->
+  <!-- Uses: https://valor-software.com/ng2-charts/#LineChart -->
   <canvas baseChart width="400" height="400"
       [data]="lineChartData"
-      
-      [type]="lineChartType"
-      >
+      [type]="lineChartType">
   </canvas>
 </div>
 

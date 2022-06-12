@@ -6,7 +6,7 @@ functionality - view different assets and their prices
 - list view with summary detail of each - done (needs formatting)
 - assets much be filterable or searchable (why not both?) - done
 
-detail view of each asset - TODO
+detail view of each asset - done needs formatting
 
 ability to maintain a wallet - TODO
 - add, remove asset amount
@@ -17,18 +17,17 @@ ability to maintain a wallet - TODO
 Views
 
 Home - list view of assets - done needs formatting
-Asset-Details - expanded view of asset details (charting - what would I use for this?) - TODO
-Maybe chart js https://www.chartjs.org/docs/latest/samples/line/line.html
+Asset-Details - expanded view of asset details - done for now - needs formatting
 Wallet View - view contents of wallet with - TODO
 
 Footer - always there
 Menu Bar - always there (Links {Home, Wallet})
 
-Add not found page (and other global handling for error pages)
-
 TODO 
 add tests
-
+add ability to filter performance graph by (ex: last year, last 3 months, etc)
+add ability to group performance graph data by smaller or greater increments (ex: data for each day, month, 6 months)
+add not found page (and other global handling for error pages ex: 404, 500 etc)
 
 TODO - not implemented
 

@@ -5,9 +5,6 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { AssetDetailsComponent } from '../../components/asset-details/asset-details.component';
 import { RouterModule } from '@angular/router';
 
-
-
-
 @NgModule({
   declarations: [
     AssetDetailsComponent

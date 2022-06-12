@@ -11,4 +11,4 @@
 </ng-template>
 <br>
 
-<a [routerLink]="['asset', asset.id]">View Details</a>
+<a *ngIf="componentState == ComponentState.ListView" [routerLink]="['asset', asset.id]">View Details</a>
