@@ -26,8 +26,10 @@ export class CoinccapService {
     );
   }
 
-  getAsset(assetId: string) {
-    return this.http.get(API_BASE_URL + `/assets/${assetId}`).pipe(
+  getAsset(assetId: string, headers?: HttpHeaders) {
+    return this.http.get(API_BASE_URL + `/assets/${assetId}`,
+      {headers: headers}
+    ).pipe(
       map((data: any) => data.data)
     );
   }

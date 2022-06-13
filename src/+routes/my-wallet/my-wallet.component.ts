@@ -33,7 +33,7 @@ export class MyWalletComponent implements OnInit {
       res.forEach((asset: any) => {
         const myWalletAsset = this.myWallet.assets[asset.id];
         // calculate the current total return
-        myWalletAsset['totalReturn'] = parseFloat(asset.priceUsd) - myWalletAsset.priceAverage;
+        myWalletAsset['totalReturn'] = (parseFloat(asset.priceUsd) * myWalletAsset.quantity) - (myWalletAsset.priceAverage * myWalletAsset.quantity);
         // calculate portfolio value
         myWalletAsset['totalValue'] = myWalletAsset.priceAverage * myWalletAsset.quantity;
         this.displayedAssets.push(
